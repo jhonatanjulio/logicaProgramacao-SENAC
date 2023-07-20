@@ -1,0 +1,6 @@
+console.log("Olá mundo")
+console.log("Olá mundo")
+console.log("Estou no Senac Largo Treze")
+console.log("Olá mundo")
+console.log("Olá mundo")
+console.log("Olá mundo")
