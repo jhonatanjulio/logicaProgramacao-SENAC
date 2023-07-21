@@ -184,6 +184,8 @@ lista[2] = 'tinha tres';
 console.log('segunda lista',lista);
 lista[4] = 'tinha cinco';
 console.log('terceira lista', lista);
+lista.push('sexto item');
+console.log('quarta lista', lista);
 
 let novaLista = ['gato', 'cachorro', 5.5];
 console.log('primeira nova lista', novaLista);
