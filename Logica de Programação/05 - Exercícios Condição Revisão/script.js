@@ -64,16 +64,105 @@
 * Exercício 2: Faça um programa que leia 5 números e informe o maior número.
 */ 
 
-const maiorNum = () => {
-    let maior = 0;
-    for(let i = 1; i != 6; i++) {
-        let num = parseInt(prompt(`Digite o ${i}º número:`));
-        if(num === 0 || num >= maior) {
-            maior = num;
+// const maiorNum = () => {
+//     let maior = 0;
+//     for(let i = 1; i != 6; i++) {
+//         let num = parseInt(prompt(`Digite o ${i}º número:`));
+//         if(i === 0 || num >= maior) {
+//             maior = num;
+//         }
+//     }
+//     return maior;
+// }
+
+// alert(`O maior número entres os que você escreveu é ${maiorNum()}`);
+
+/*
+* Exercício 1: Faça um programa que leia 5 números e mostre a soma e a média deles.
+*/
+
+// let i = 1;
+// let soma = 0;
+// while(i <= 5) {
+//     soma += parseFloat(prompt(`Digite o ${i}º número:`));
+//     i++;
+// }
+// console.log(`A soma dos números que você digitou é: ${soma}\nA média dos números que você digitou é: ${(soma / i).toFixed(2)}`);
+
+/*
+* Exercício 2: Faça um algoritmo que pergunte ao usuário uma operação e um número e depois exiba sua respectiva tabuada.
+*/
+
+const calculadora = () => {
+    let loop = true;
+    while(loop) {
+        const operacao = parseInt(prompt(`Que operação você deseja realizar?\n\n[1] Adição\n[2] Subtração\n[3] Multiplicação\n[4] Divisão\n[5] Sair do programa`));
+        let escolha;
+        switch(operacao) {
+            case "+":
+            case 1:
+                escolha = "ADIÇÃO";
+                break;
+            case "-":
+            case 2:
+                escolha = "SUBTRAÇÃO";
+                break;
+            case "*":
+            case 3:
+                escolha = "MULTIPLICAÇÃO";
+                break;
+            case "/":
+            case 4: 
+                escolha = "DIVISÃO";
+                break;
+        }
+        
+        let entrada = parseFloat(prompt(`Você escolheu ${escolha}!\nDigite um número:`));
+
+        switch(operacao) {
+            case '+':
+            case 1:
+                let outputAdicao = "";
+                for(let i = 0; i <= 10; i++) {
+                    outputAdicao += `${entrada} + ${i} = ${entrada + i}\n`;
+                }
+                alert(`Tabuada de SOMA do ${entrada}\n\n${outputAdicao}`);
+                break;
+            case "-":
+            case 2:
+                let outputSubtracao = "";
+                for(let i = 0; i <= 10; i++) {
+                    outputSubtracao += `${entrada} - ${i} = ${entrada - i}\n`;
+                }
+                alert(`Tabuada de SUBTRAÇÃO do ${entrada}\n\n${outputSubtracao}`);
+                break;
+            case "*":
+            case 3:
+                let outputMult = "";
+                for(let i = 0; i <= 10; i++) {
+                    outputMult += `${entrada} x ${i} = ${entrada * i}\n`;
+                }
+                alert(`Tabuada de MULTIPLICAÇÃO do ${entrada}\n\n${outputMult}`);
+                break;
+            case "/":
+            case 4:
+                let outputDiv = "";
+                for(let i = 0; i <= 10; i++) {
+                    if(!(i === 0)) {
+                        outputDiv += `${entrada} / ${i} = ${entrada / i}\n`;
+                    }
+                }
+                alert(`Tabuada de DIVISÃO do ${entrada}\n\n${outputDiv}`);
+                break;
+            case 5:
+                alert(`Finalizando...`);
+                loop = false;
+                break;
+            default:
+                alert(`Opção inválida! Digite novamente.`);
+                break;
         }
     }
-    return maior;
 }
 
-alert(`O maior número entres os que você escreveu é ${maiorNum()}`);
-
+calculadora();
