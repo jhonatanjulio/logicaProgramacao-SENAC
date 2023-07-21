@@ -93,76 +93,99 @@
 * Exercício 2: Faça um algoritmo que pergunte ao usuário uma operação e um número e depois exiba sua respectiva tabuada.
 */
 
-const calculadora = () => {
-    let loop = true;
-    while(loop) {
-        const operacao = parseInt(prompt(`Que operação você deseja realizar?\n\n[1] Adição\n[2] Subtração\n[3] Multiplicação\n[4] Divisão\n[5] Sair do programa`));
-        let escolha;
-        switch(operacao) {
-            case "+":
-            case 1:
-                escolha = "ADIÇÃO";
-                break;
-            case "-":
-            case 2:
-                escolha = "SUBTRAÇÃO";
-                break;
-            case "*":
-            case 3:
-                escolha = "MULTIPLICAÇÃO";
-                break;
-            case "/":
-            case 4: 
-                escolha = "DIVISÃO";
-                break;
-        }
+// const calculadora = () => {
+//     let loop = true;
+//     while(loop) {
+//         const operacao = parseInt(prompt(`Que operação você deseja realizar?\n\n[1] Adição\n[2] Subtração\n[3] Multiplicação\n[4] Divisão\n[5] Sair do programa`));
+//         let escolha;
+//         switch(operacao) {
+//             case "+":
+//             case 1:
+//                 escolha = "ADIÇÃO";
+//                 break;
+//             case "-":
+//             case 2:
+//                 escolha = "SUBTRAÇÃO";
+//                 break;
+//             case "*":
+//             case 3:
+//                 escolha = "MULTIPLICAÇÃO";
+//                 break;
+//             case "/":
+//             case 4: 
+//                 escolha = "DIVISÃO";
+//                 break;
+//         }
         
-        let entrada = parseFloat(prompt(`Você escolheu ${escolha}!\nDigite um número:`));
+//         let entrada = parseFloat(prompt(`Você escolheu ${escolha}!\nDigite um número:`));
 
-        switch(operacao) {
-            case '+':
-            case 1:
-                let outputAdicao = "";
-                for(let i = 0; i <= 10; i++) {
-                    outputAdicao += `${entrada} + ${i} = ${entrada + i}\n`;
-                }
-                alert(`Tabuada de SOMA do ${entrada}\n\n${outputAdicao}`);
-                break;
-            case "-":
-            case 2:
-                let outputSubtracao = "";
-                for(let i = 0; i <= 10; i++) {
-                    outputSubtracao += `${entrada} - ${i} = ${entrada - i}\n`;
-                }
-                alert(`Tabuada de SUBTRAÇÃO do ${entrada}\n\n${outputSubtracao}`);
-                break;
-            case "*":
-            case 3:
-                let outputMult = "";
-                for(let i = 0; i <= 10; i++) {
-                    outputMult += `${entrada} x ${i} = ${entrada * i}\n`;
-                }
-                alert(`Tabuada de MULTIPLICAÇÃO do ${entrada}\n\n${outputMult}`);
-                break;
-            case "/":
-            case 4:
-                let outputDiv = "";
-                for(let i = 0; i <= 10; i++) {
-                    if(!(i === 0)) {
-                        outputDiv += `${entrada} / ${i} = ${entrada / i}\n`;
-                    }
-                }
-                alert(`Tabuada de DIVISÃO do ${entrada}\n\n${outputDiv}`);
-                break;
-            case 5:
-                alert(`Finalizando...`);
-                loop = false;
-                break;
-            default:
-                alert(`Opção inválida! Digite novamente.`);
-                break;
-        }
-    }
-}
+//         switch(operacao) {
+//             case '+':
+//             case 1:
+//                 let outputAdicao = "";
+//                 for(let i = 0; i <= 10; i++) {
+//                     outputAdicao += `${entrada} + ${i} = ${entrada + i}\n`;
+//                 }
+//                 alert(`Tabuada de SOMA do ${entrada}\n\n${outputAdicao}`);
+//                 break;
+//             case "-":
+//             case 2:
+//                 let outputSubtracao = "";
+//                 for(let i = 0; i <= 10; i++) {
+//                     outputSubtracao += `${entrada} - ${i} = ${entrada - i}\n`;
+//                 }
+//                 alert(`Tabuada de SUBTRAÇÃO do ${entrada}\n\n${outputSubtracao}`);
+//                 break;
+//             case "*":
+//             case 3:
+//                 let outputMult = "";
+//                 for(let i = 0; i <= 10; i++) {
+//                     outputMult += `${entrada} x ${i} = ${entrada * i}\n`;
+//                 }
+//                 alert(`Tabuada de MULTIPLICAÇÃO do ${entrada}\n\n${outputMult}`);
+//                 break;
+//             case "/":
+//             case 4:
+//                 let outputDiv = "";
+//                 for(let i = 0; i <= 10; i++) {
+//                     if(!(i === 0)) {
+//                         outputDiv += `${entrada} / ${i} = ${entrada / i}\n`;
+//                     }
+//                 }
+//                 alert(`Tabuada de DIVISÃO do ${entrada}\n\n${outputDiv}`);
+//                 break;
+//             case 5:
+//                 alert(`Finalizando...`);
+//                 loop = false;
+//                 break;
+//             default:
+//                 alert(`Opção inválida! Digite novamente.`);
+//                 break;
+//         }
+//     }
+// }
 
-calculadora();
+// calculadora();
+
+/*
+* Crie uma lista com 5 itens;
+* Alterar o terceiro e quinto item;
+* Adicionar um sexto item;
+* 
+* Criar uma outra lista com dois itens;
+* 
+* Unir ambas as listas
+*
+*/
+
+let lista = [1, 2, 3, true, false];
+console.log('primeira lista', lista);
+lista[2] = 'tinha tres';
+console.log('segunda lista',lista);
+lista[4] = 'tinha cinco';
+console.log('terceira lista', lista);
+
+let novaLista = ['gato', 'cachorro', 5.5];
+console.log('primeira nova lista', novaLista);
+let listaUnida = novaLista.concat(lista);
+console.log('lista Unida', listaUnida);
