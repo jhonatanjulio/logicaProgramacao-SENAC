@@ -1,131 +1,130 @@
-// // Ex01: Faça um algoritmo que leia os valores A, B, C e imprima na tela se a soma de A + B é menor que C
-// let a = parseFloat(prompt("Insira o valor de A: "));
-// let b = parseFloat(prompt("Insira o valor de B: "));
-// let c = parseFloat(prompt("Insira o valor de C: "));
+/*
+Escreva um programa em JavaScript que declare uma variável "idade" com o valor 15. Em seguida, verifique se a idade é maior ou igual a 18. Se a idade for maior ou igual a 18, o programa deve imprimir no console a mensagem "Pode entrar!". Caso contrário, o programa não deve imprimir nada.
 
-// function maiorQueC(a, b, c) {
-//     if ((a + b) < c) {
-//         return "A soma de A + B é menor que C!";
-//     }
-//     return "A soma de A + B NÃO é menor que C!";
-// }
+Para implementar a verificação de idade, utilize uma estrutura condicional (if statement). O programa deve seguir a seguinte estrutura:
 
-// console.log(maiorQueC());
+Declarar a variável "idade" com o valor 15.
+Verificar se a idade é maior ou igual a 18 utilizando uma estrutura condicional (if statement).
+Se a idade for maior ou igual a 18, imprimir no console a mensagem "Pode entrar!".
+Caso contrário, não imprimir nada.
+*/
 
-// // Ex02: Faça um algoritmo que leia o nome, o sexo e o estado civil de uma pessoa. Caso o sexo seja "F" e estado civil "CASADA", solicitar o tempo de casada (anos).
-
-// let nome = prompt("Digite seu nome: ");
-// let sexo = prompt("Digite seu sexo: ").toLowerCase();
-// let estado = prompt("Digite seu estado civil: ").toLowerCase();
-
-// function estadoCivil(nome, sexo, estado) {
-//     if (sexo[0] === 'f' && estado === 'casada') {
-//         let tempoDeCasada = parseInt(prompt("Quanto tempo você está casada?"));
-//         return `${nome} do sexo feminino, está casada a ${tempoDeCasada} anos!`
-//     }
-//     return `Bem vindo ${nome}.`
-// }
-
-// // Ex03: Faça um algoritmo para receber um número qualquer e informar na tela se é par ou ímpar.
-// let num = parseInt(prompt("Digite um número inteiro: "));
-// const imparPar = num => {
-//     if (num % 2 === 0) {
-//         return `O número ${num} é par!`
-//     }
-//     return `O número ${num} é impar!`
-// }
-
-// console.log(imparPar(num));
-
-// Ex04: Faça um algoritmo que recebe o nome de um time e indique qual a sua posição na tabela do brasileirão. Considerar os 7 primeiros times.
-
-// const brasileirao = {
-//     "botafogo": 1,
-//     "flamengo": 2,
-//     "grêmio": 3,
-//     "são paulo": 4,
-//     "fluminense": 5,
-//     "palmeiras": 6,
-//     "bragantino": 7
-// }
-
-// let qualTime = prompt("Digite o nome do time para saber sua posição: ");
-// const posTime = time => `O ${time} está na posição ${brasileirao[time.toLowerCase()]}`;
-
-// console.log(posTime(qualTime));
-
-// Ex05: Elabore um algoritmo que calcule o que deve ser pago por um produto, considerando o preço normal de etiqueta e a escolha da condição de pagamento. Utilize os códigos da tabela a seguir para ler qual a condição de pagamento escolhida e efetuar o cálculo adequado.
-// Código | Condição de Pagamento
-//   1    | À vista em dinheiro ou cheque, recebe 10% de desconto
-//   2    | À vista no cartão de crédito, recebe 15% de desconto
-//   3    | Em duas vezes, preço normal de etiqueta sem juros
-//   4    | Em três vezes para mais, preço normal de etiqueta mais juros de 10%
-
-// const preco = parseFloat(prompt("Digite o preço de etiqueta do produto: "));
-// const formaDePagamento = () => parseInt(prompt(`Escolha a forma de pagamento: \n
-// [1] À vista em dinheiro ou cheque\n
-// [2] À vista no cartão de crédito\n
-// [3] Parcelar
-// [4] Sair`));
-
-// let loopGlobal = true;
-// while (loopGlobal) {
-//     switch(formaDePagamento()) {
-//         case 1:
-//             const descontoDinheiroCartao = 0.1 * preco
-//             alert(`À vista em dinheiro ou cheque (10% de desconto):\n\n
-//             Você receberá R$${descontoDinheiroCartao} de desconto!\n
-//             Preço final: R$${preco - descontoDinheiroCartao}.`);
-//             break;
-//         case 2:
-//             const descontoCredito = 0.15 * preco
-//             alert(`À vista em dinheiro ou cheque (15% de desconto):\n\n
-//             Você receberá R$${descontoCredito} de desconto!\n
-//             Preço final: R$${preco - descontoCredito}.`);
-//             break;
-//         case 3:
-//             let loopParcela = true;
-//             const parcela = () => parseInt(prompt(`Parcelar em quantas vezes?:
-//             [1] Duas vezes (Preço de Etiqueta sem Juros)\n
-//             [2] Três vezes (Preço de Etiqueta mais 10% de Juros)`))
-//             while (loopParcela) {
-//                 switch(parcela()) {
-//                     case 1:
-//                         alert(`Duas vezes (Preço de Etiqueta sem Juros):\n\nPreço final: R$${preco}.`);
-//                         loopParcela = false;
-//                         break;
-//                     case 2:
-//                         const juros = 0.1 * preco
-//                         alert(`Três vezes (Preço de Etiqueta com 10% de Juros):\n\n
-//                         Você receberá R$${juros} de juros!\n
-//                         Preço final: R$${preco + juros}.`);
-//                         loopParcela = false;
-//                         break;
-//                     default:
-//                         alert("Opção inválida!");
-//                         break;
-//                 }
-//             }
-//             break;
-//         case 4:
-//             alert("Saindo...");
-//             loopGlobal = false;
-//             break;
-//         default:
-//             alert("Opção inválida!");
-//             break;
-//     }
-// }
-
-// Ex06: Escrever um algoritmo que gera e escreve os números ímpares entre 100 e 200.
-// for (let i = 101; i < 200; i += 2) {
-//     console.log(i);
-// }
-
-// Ex07: Escrever um algoritmo que efetue a soma de todos os números ímpares que são múltiplos de três e que se encontram no conjunto dos números de 1 até 500.
-let soma = 0;
-for (let i = 0; i < 500; i += 3) {
-    soma += i;
+function ex01() {
+    let idade = 15;
+    if(idade >= 18) {console.log("Pode entrar!")};
 }
+// ex01();
 
-console.log(soma);
+/* 
+02 -  Escreva um programa em JavaScript que declare uma constante "nome" com o valor "Ana".
+Em seguida, utilize uma estrutura condicional if para verificar se o valor da constante "nome" é igual a "Ana". Caso seja, imprima no console a mensagem "Olá Ana, tudo bem?" utilizando o recurso de template literals para interpolar a variável "nome" na mensagem.
+*/
+
+function ex02() {
+    const nome = "Ana";
+    if(nome === "Ana") {console.log(`Olá ${nome}, tudo bem?`)};    
+}
+// ex02();
+
+/*  
+03 - Escreva um programa em JavaScript que declare uma constante "num" com o valor 18.
+Em seguida, utilize a função Math.pow() para calcular e imprimir no console o valor de 2 elevado ao quadrado (2²), 3 elevado ao quadrado (3²) e "num" elevado ao quadrado ("num"²).
+*/
+
+function ex03() {
+    const num = 18;
+    console.log(Math.pow(2, 2));
+    console.log(Math.pow(3, 2));
+    console.log(Math.pow(num, 2));
+}
+// ex03();
+
+/* 04 - Imagine que alguém está dirigindo um carro em uma estrada, cujo limite de velocidade é de 80 km/h. Se essa pessoa estiver dirigindo a 55 km/h, não há problema e ela não receberá uma multa por excesso de velocidade. No entanto, se ela estiver dirigindo a uma velocidade maior que 80 km/h, ela será multada.
+
+O programa em JavaScript simula essa situação, verificando se a velocidade do veículo é maior que 80 km/h e imprimindo a mensagem "Levou multa" caso seja, ou "Não levou multa" caso contrário. Isso pode ser útil para os motoristas se conscientizarem sobre a importância de respeitar os limites de velocidade e evitar multas e acidentes.
+*/
+
+function ex04() {
+    let velocidadeAtual = parseFloat(prompt("Digite a velocidade atual do veículo: "));
+    velocidadeAtual > 80 ? console.log("Levou multa") : console.log("Não levou multa");
+}
+// ex04();
+
+/* 05 - Escreva um programa em JavaScript que declare uma variável "idade" com o valor 23 e uma variável "cnh" com o valor false.
+
+Em seguida, utilize uma estrutura condicional if-else-if para verificar se a idade é maior ou igual a 18 e se a pessoa possui CNH. Caso ambas as condições sejam verdadeiras, imprima no console a mensagem "Sim, pode dirigir".
+Caso a idade seja maior ou igual a 18 mas a pessoa não possui CNH, imprima no console a mensagem "Não pode dirigir, mas pode fazer a CNH".
+Caso contrário, ou seja, se a pessoa tiver menos de 18 anos, imprima no console a mensagem "Não pode dirigir".
+
+Certifique-se de que a estrutura condicional esteja completa, com o uso das chaves {} para delimitar o bloco de código a ser executado em caso de cada condição.
+*/
+
+function ex05() {
+    let idade = parseInt(prompt("Digite sua idade: "));
+    let cnh = prompt("Você possui CNH? [S/N]:").toLowerCase()[0];
+
+    if (idade >= 18 && cnh === 's') {
+        console.log("Sim, pode dirigir.");
+    } else if (idade >= 18 && cnh === 'n') {
+        console.log("Você não pode dirigir, porém pode tirar sua CNH!");
+    } else {
+        console.log("Você não pode dirigir.");
+    }
+}  
+// ex05();
+
+/* 
+06 - Escreva um programa em JavaScript que utilize a estrutura de repetição while para imprimir no console os números de 0 a 10.
+Certifique-se de utilizar uma variável de controle "i" inicializada em 0 e incrementada em 1 a cada iteração, verificando se o valor de "i" é menor ou igual a 10 para evitar um loop infinito. Utilize a função console.log() para imprimir os valores de "i" em cada iteração do loop.
+*/
+ 
+function ex06() {
+    let i = 0;
+    while (i <= 10) {
+        console.log(i);
+        i++;
+    }
+}
+// ex06();
+
+// 07 - Crie um programa em Javascript que conte de 100 até 50 em ordem decrescente e imprima cada número no console. Utilize um laço de repetição for para realizar essa tarefa.
+
+function ex07() {
+    for(let i = 100; i >= 50; i--) {
+        console.log(i);
+    }
+}
+// ex07();
+
+/* 
+08 - Crie um programa em Javascript que conte de 0 até 50 e imprima no console se cada número é par ou ímpar. Utilize um laço de repetição for para percorrer cada número de 0 a 50 e utilize uma estrutura condicional if...else para verificar se o número é par ou ímpar. Caso o número seja par, o programa deve imprimir a mensagem "O número X é par", onde X é o número em questão. Caso o número seja ímpar, o programa deve imprimir a mensagem "O número X é ímpar". 
+*/
+
+function ex08() {
+    for (let i = 0; i <= 50; i++) {
+        if(i % 2 === 0) {
+            console.log(`O número ${i} é PAR!`);
+        } else {
+            console.log(`O número ${i} é ÍMPAR!`);
+        }
+    }
+}
+// ex08();
+
+/* 
+09 - Crie um programa em Javascript que verifique se um número é primo ou não. O número a ser verificado deve ser armazenado em uma variável chamada num. O programa deve contar quantas divisões exatas o número tem utilizando um laço de repetição for que percorre todos os números de 1 até o próprio número. Caso o número seja divisível por um desses números, aumenta-se o valor da variável divisoes. Ao final do laço, utiliza-se uma estrutura condicional if...else para verificar se o número é primo ou não. Se o número tiver exatamente duas divisões exatas (1 e ele mesmo), o programa deve imprimir a mensagem "O número X é primo", onde X é o número em questão. Caso contrário, o programa deve imprimir a mensagem "O número X não é primo".
+*/
+
+function ex09() {
+    let num = parseInt(prompt("Digite um número"));
+    let qtdeDivisoes = 0;
+
+    for (let i = 1; i <= num; i++) {
+        if(num % i === 0) {
+            qtdeDivisoes++;
+        }
+    }
+
+    qtdeDivisoes === 2 ? console.log(`O número ${num} é primo!`) : console.log(`O número ${num} NÃO É primo!`);
+}
+ex09();
